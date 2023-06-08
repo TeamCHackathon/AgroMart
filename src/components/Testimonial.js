@@ -1,5 +1,5 @@
 import React from "react";
-import logoo from "../images/agr01.jpg";
+// import logoo from "../images/agr01.jpg";
 import "./Testimonial.css";
 
 const Testimonial = () => {

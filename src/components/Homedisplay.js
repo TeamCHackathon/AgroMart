@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../images/agro2.JPG";
 import logo2 from "../images/agro3.JPG";
 import logo3 from "../images/agro4.JPG";
-import logo4 from "../images/agro5.JPG";
+// import logo4 from "../images/agro5.JPG";
 import logo5 from "../images/agro6.JPG";
 import logo6 from "../images/agro7.JPG";
 import logo7 from "../images/agro8.JPG";
