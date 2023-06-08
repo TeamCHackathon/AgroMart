@@ -27,11 +27,11 @@ const Homedisplay = () => {
         </div>
       </div>
 
-      <div className="container">
+      {/* <div className="container">
         <div className="mx-auto">
           <img src={logo4} alt="" className="" />
         </div>
-      </div>
+      </div> */}
 
       <div className="card-container">
         <div className="card">

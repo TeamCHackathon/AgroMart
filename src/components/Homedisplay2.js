@@ -6,12 +6,10 @@ import logoo from "../images/agr00.jpg";
 const Homedisplay2 = () => {
   return (
     <>
-      <div className="container d-flex justify-content-center align-items-center vh-100">
-        <div>
-          <h4>
-            How does <strong>Agro Mart</strong> Work?
-          </h4>
-        </div>
+      <div className="container d-flex justify-content-center align-items-center ">
+        <h4>
+          How does <strong>Agro Mart</strong> Work?
+        </h4>
       </div>
       <div className="card-container">
         <div className="card">
