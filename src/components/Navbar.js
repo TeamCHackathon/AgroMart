@@ -68,7 +68,7 @@ const NavLinks = () => {
         </Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link btn1" to="/contact">
+        <Link className="nav-link btn2" to="/contact">
           <BsCart3 />
         </Link>
       </li>
