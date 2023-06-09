@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import Subscribe from "../components/Subscribe";
+import { Link } from "react-router-dom";
+import { FcGoogle } from "react-icons/fc";
+import { DiApple } from "react-icons/di";
+import { BsFacebook } from "react-icons/bs";
 
 const Register = () => {
   const [firstName, setFirstName] = useState("");
@@ -95,6 +99,29 @@ const Register = () => {
             Submit
           </button>
         </form>
+        <div className="my-4 text-center">
+          <div className="d-flex align-items-center">
+            <div className="flex-grow-1">
+              <hr className="border-secondary" />
+            </div>
+            <span className="px-3 bg-white text-muted">or</span>{" "}
+            <div className="flex-grow-1">
+              <hr className="border-secondary" />
+            </div>
+          </div>
+        </div>
+        <div>
+          <p>Sign Up with</p>
+          <div className="">
+            <FcGoogle />
+            <BsFacebook />
+            <DiApple />
+          </div>
+        </div>
+        <div className="mt-5 mb-5">
+          <p>Already have an Account?</p>
+          <Link to="/login">Login</Link>
+        </div>
       </div>
 
       <Subscribe />

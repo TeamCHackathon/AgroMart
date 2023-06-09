@@ -12,6 +12,7 @@ import Orders from "./pages/Orders";
 import PaymentPage from "./pages/Payment";
 import Cart from "./pages/Cart";
 import ThankYouPage from "./pages/Thankyou";
+import Login from "./pages/Login";
 
 function App() {
   const cartItems = []; // Replace with your cart items data
@@ -25,6 +26,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/marketplace" element={<Marketplace />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/cart" element={<Cart />} />
