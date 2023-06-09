@@ -81,12 +81,12 @@ const NavLinks = ({ isOpen }) => {
         </Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link btn1" to="/contact">
+        <Link className="nav-link btn1" to="/register">
           Login/Sign Up
         </Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link btn2" to="/contact">
+        <Link className="nav-link btn2" to="/cart">
           <BsCart3 />
         </Link>
       </li>

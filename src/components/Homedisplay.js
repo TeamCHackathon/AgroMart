@@ -6,6 +6,7 @@ import logo3 from "../images/agro4.JPG";
 import logo5 from "../images/agro6.JPG";
 import logo6 from "../images/agro7.JPG";
 import logo7 from "../images/agro8.JPG";
+import { Link } from "react-router-dom";
 
 const Homedisplay = () => {
   return (
@@ -48,6 +49,13 @@ const Homedisplay = () => {
           <img src={logo7} alt="Organic Apple" className="card-image" />
           <p className="card-text">Organic Date</p>
         </div>
+      </div>
+      <div className="text-center mt-5 mb-5">
+        <button>
+          <Link to="/marketplace" className=" btn1">
+            Marketplace
+          </Link>
+        </button>
       </div>
     </>
   );
