@@ -1,5 +1,5 @@
 import React from "react";
-import Itemcard from "./MenuCard1";
+import Itemcard from "./Itemcard";
 import data from "./Data";
 
 const Assemble = () => {
@@ -7,7 +7,7 @@ const Assemble = () => {
     <>
       <section className="py-4 container">
         <div className="row justify-content-center">
-          {data.productData.map((item, index) => {
+          {data.productdata.map((item, index) => {
             return (
               <Itemcard
                 img={item.img}

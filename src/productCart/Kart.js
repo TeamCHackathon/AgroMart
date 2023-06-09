@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useCart } from "react-use-cart";
 
 const Kart = () => {
@@ -68,11 +69,8 @@ const Kart = () => {
           <button className="btn btn-dark m-2 " onClick={() => emptyCart()}>
             Clear Cart
           </button>
-          <button className="btn btn-success ">
-            <a href="https://wa.link/nbkir0" className="nav-link">
-              {" "}
-              Order
-            </a>
+          <button className="btn1 ">
+            <Link to="/payment">Order</Link>
           </button>
         </div>
       </div>

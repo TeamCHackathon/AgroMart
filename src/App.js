@@ -8,11 +8,17 @@ import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Register from "./pages/Register";
 import Marketplace from "./pages/Marketplace";
+import Orders from "./pages/Orders";
+import PaymentPage from "./pages/Payment";
+import Cart from "./pages/Cart";
+import ThankYouPage from "./pages/Thankyou";
 
 function App() {
+  const cartItems = []; // Replace with your cart items data
+
   return (
     <article>
-      <NavBar />
+      <NavBar cartItems={cartItems} />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -20,6 +26,10 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register />} />
         <Route path="/marketplace" element={<Marketplace />} />
+        <Route path="/orders" element={<Orders />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/thankyou" element={<ThankYouPage />} />
       </Routes>
       <Footer />
     </article>

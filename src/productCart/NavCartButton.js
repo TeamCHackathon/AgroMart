@@ -3,23 +3,16 @@ import { useCart } from "react-use-cart";
 import { BsCart3 } from "react-icons/bs";
 import classes from "./NavCartButton.module.css";
 
-const NavCartButton = (props) => {
-  //Using useContext & useState hooks
+const NavCartButton = ({ cartItems }) => {
   const cartCtx = useCart();
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
-  //ENDS
 
-  //Extracting the items variable from the context values mainly to be used as a useEffect dependency
-  const { items } = cartCtx;
-  //ENDS
+  const { items, addItem } = cartCtx;
 
-  //Adding conditional stying to the Cart button using useState and ternary operator
   const btnBump = `${classes.cart__button} ${
     btnIsHighlighted ? classes.bump : ""
   }`;
-  //ENDS
 
-  // Using the Effect hook to control the animation of the Cart button on adding items
   useEffect(() => {
     if (items.length === 0) {
       return;
@@ -35,12 +28,19 @@ const NavCartButton = (props) => {
       clearTimeout(bumpTimer);
     };
   }, [items]);
-  const { isEmpty, totalItems } = useCart();
-  // ENDS
 
-  //Rendering the Cart button on the DOM
+  const handleAddToCart = () => {
+    if (Array.isArray(cartItems)) {
+      cartItems.forEach((item) => {
+        addItem(item);
+      });
+    }
+  };
+
+  const { isEmpty, totalItems } = useCart();
+
   return (
-    <div onClick={props.onClick} className={btnBump}>
+    <div onClick={handleAddToCart} className={btnBump}>
       <i className="">
         <BsCart3 />
         {!isEmpty && <span style={{ position: "relative" }}>{totalItems}</span>}
@@ -48,7 +48,6 @@ const NavCartButton = (props) => {
       </i>
     </div>
   );
-  //ENDS
 };
 
 export default NavCartButton;

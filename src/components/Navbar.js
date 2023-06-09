@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import logo from "../images/agromartlogo2.png";
-import { BsCart3 } from "react-icons/bs";
+import NavCartButton from "../productCart/NavCartButton";
 
-const Nav = styled("nav")`
+const Nav = styled.nav`
   padding: 1.5rem 0;
   background-color: #ffffff;
   position: relative;
@@ -14,14 +14,14 @@ const Nav = styled("nav")`
   }
 `;
 
-const LinksWrapper = styled("ul")`
+const LinksWrapper = styled.ul`
   display: flex;
   align-items: center;
   list-style: none;
   margin-left: auto;
 `;
 
-const LogoWrapper = styled("div")`
+const LogoWrapper = styled.div`
   margin-right: auto;
 `;
 
@@ -55,14 +55,14 @@ const NavbarToggler = ({ onClick }) => {
       <span className="navbar-toggler-icon">
         <span
           className="icon-bar"
-          style={{ BackgroundColor: "#004500" }}
+          style={{ backgroundColor: "#004500" }}
         ></span>
       </span>
     </button>
   );
 };
 
-const NavLinks = ({ isOpen }) => {
+const NavLinks = ({ isOpen, cartItems }) => {
   return (
     <LinksWrapper className={`navbar-nav ${isOpen ? "open" : ""}`}>
       <li className="nav-item active">
@@ -87,14 +87,14 @@ const NavLinks = ({ isOpen }) => {
       </li>
       <li className="nav-item">
         <Link className="nav-link btn2" to="/cart">
-          <BsCart3 />
+          <NavCartButton cartItems={cartItems.length} />
         </Link>
       </li>
     </LinksWrapper>
   );
 };
 
-const NavBar = () => {
+const NavBar = ({ cartItems }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleToggle = (newState) => {
@@ -106,7 +106,7 @@ const NavBar = () => {
       <Logo />
       <NavbarToggler onClick={handleToggle} />
       <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
-        <NavLinks isOpen={isOpen} />
+        <NavLinks isOpen={isOpen} cartItems={cartItems} />
       </div>
     </Nav>
   );

@@ -1,6 +1,6 @@
 .cart__button {
-  background-color: #f0bc11;
-  color: var(--light);
+  /* background-color: #; */
+  color: #73df08;
   padding: 10px 0;
   width: 50px;
   text-align: center;
@@ -12,7 +12,7 @@
   display: inline-block;
   margin-right: 5px;
   font-size: 18px;
-  color: var(--light);
+  color: #73df08;
 }
 
 .cart__button .badge {
@@ -25,7 +25,7 @@
 }
 
 .cart__button:hover {
-  background-color: #f0bc11;
+  background-color: #004500;
 }
 
 .bump.cart__button {

@@ -51,11 +51,9 @@ const Homedisplay = () => {
         </div>
       </div>
       <div className="text-center mt-5 mb-5">
-        <button>
-          <Link to="/marketplace" className=" btn1">
-            Marketplace
-          </Link>
-        </button>
+        <Link to="/marketplace" className="btn1">
+          Marketplace
+        </Link>
       </div>
     </>
   );

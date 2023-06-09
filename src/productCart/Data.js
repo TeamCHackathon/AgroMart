@@ -1,69 +1,69 @@
-import img1 from "../images/meat1.png";
-import img2 from "../images/rice1.jpg";
-import img3 from "../images/swallow.jpg";
+import img1 from "../images/agr00.jpg";
+import img2 from "../images/agr01.jpg";
+import img3 from "../images/agro1.jpg";
 
 const data = {
-  productData: [
+  productdata: [
     {
       id: 1,
       img: img1,
-      title: "Juicy Meat",
+      title: "Onions",
       desc: "",
       price: 1000,
     },
     {
       id: 2,
       img: img2,
-      title: "Rice",
+      title: "Tomato",
       desc: "",
       price: 1000,
     },
     {
       id: 3,
       img: img3,
-      title: "Swallow",
+      title: "Watermelon",
       desc: "",
       price: 1000,
     },
     {
       id: 4,
       img: img3,
-      title: "Beans Porridge with plantain",
+      title: "Beans",
       desc: "",
       price: 1000,
     },
     {
       id: 5,
       img: img3,
-      title: "Beans Porridge with plantain",
+      title: "plantain",
       desc: "",
       price: 1000,
     },
     {
       id: 6,
       img: img3,
-      title: "Boiled Yam with fish sauce/Stew/Vegetable",
+      title: "Fish",
       desc: "",
       price: 1000,
     },
     {
       id: 7,
       img: img3,
-      title: "Masa Special with Soup/Meat, snail or gizzard",
+      title: "Meat",
       desc: "",
       price: 1000,
     },
     {
       id: 8,
       img: img3,
-      title: "Northern Pottage(Pate)",
+      title: "Vegetable",
       desc: "",
       price: 1000,
     },
     {
       id: 9,
       img: img3,
-      title: "Samosa,Springrolls and puff-puff",
+      title: "Oil",
       desc: "",
       price: 1000,
     },
