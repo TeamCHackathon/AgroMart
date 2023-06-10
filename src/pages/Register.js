@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import Subscribe from "../components/Subscribe";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
@@ -13,9 +14,33 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Perform form submission or validation logic here
+
+    try {
+      const response = await axios.post("./api/register", {
+        firstName,
+        lastName,
+        email,
+        phoneNumber,
+        password,
+        confirmPassword,
+      });
+
+      // Handle the response if needed
+      console.log(response.data); // Assuming the server returns a JSON response
+
+      // Reset the form
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPhoneNumber("");
+      setPassword("");
+      setConfirmPassword("");
+    } catch (error) {
+      // Handle error responses
+      console.error(error);
+    }
   };
 
   return (

@@ -1,14 +1,36 @@
 import React, { useState } from "react";
+import axios from "axios"; // Import Axios for making HTTP requests
 import Subscribe from "../components/Subscribe";
-// import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const Register = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
-
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  navigate("/dashboard");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    try {
+      const response = await axios.post("./api/login", {
+        email,
+        password,
+      });
+
+      // Handle the response if needed
+      console.log(response.data); // Assuming the server returns a JSON response
+
+      // Reset the form
+      setEmail("");
+      setPassword("");
+
+      // Redirect to the dashboard or desired page
+      navigate.push("/dashboard");
+    } catch (error) {
+      // Handle error responses
+      console.error(error);
+    }
   };
 
   return (
@@ -53,4 +75,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
