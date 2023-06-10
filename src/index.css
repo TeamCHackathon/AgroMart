@@ -362,8 +362,8 @@ h3 {
 }
 
 .footer {
-  background: var(--clr-sisi);
-  color: var(--clr-dark);
+  background: var(--clr-dark);
+  color: var(--clr-light);
   text-align: center;
   align-content: center;
   padding: 2.5em 0;

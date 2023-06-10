@@ -12,7 +12,7 @@ const Home = () => {
       <Homedisplay />
       <Homedisplay2 />
       <Testimonial />
-      <Subscribe />
+      <Subscribe className="mb-5" />
     </>
   );
 };

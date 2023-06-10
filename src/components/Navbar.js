@@ -71,7 +71,7 @@ const NavLinks = ({ isOpen, cartItems }) => {
         </Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to="/orders">
+        <Link className="nav-link" to="/about">
           About Us
         </Link>
       </li>
