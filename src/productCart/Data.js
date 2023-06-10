@@ -1,69 +1,75 @@
-import img1 from "../images/agr00.jpg";
-import img2 from "../images/agr01.jpg";
-import img3 from "../images/agro1.jpg";
+import img1 from "../images/agro11.JPG";
+import img2 from "../images/agrop10.JPG";
+import img3 from "../images/agrop1.JPG";
+import img4 from "../images/agrop9.JPG";
+import img5 from "../images/agrop4.JPG";
+import img6 from "../images/agrop7.JPG";
+import img7 from "../images/agrop.JPG";
+import img8 from "../images/agrop3.JPG";
+import img9 from "../images/agrop8.JPG";
 
 const data = {
   productdata: [
     {
       id: 1,
       img: img1,
-      title: "Onions",
+      title: "Crops & Grains",
       desc: "",
       price: 1000,
     },
     {
       id: 2,
       img: img2,
-      title: "Tomato",
+      title: "Fish & SeaFood",
       desc: "",
       price: 1000,
     },
     {
       id: 3,
       img: img3,
-      title: "Watermelon",
+      title: "Food Ingredients",
       desc: "",
       price: 1000,
     },
     {
       id: 4,
-      img: img3,
-      title: "Beans",
+      img: img4,
+      title: "Fruits",
       desc: "",
       price: 1000,
     },
     {
       id: 5,
-      img: img3,
-      title: "plantain",
+      img: img5,
+      title: "Meat & Diary",
       desc: "",
       price: 1000,
     },
     {
       id: 6,
-      img: img3,
-      title: "Fish",
+      img: img6,
+      title: "Nuts",
       desc: "",
       price: 1000,
     },
     {
       id: 7,
-      img: img3,
-      title: "Meat",
+      img: img7,
+      title: "Oils",
       desc: "",
       price: 1000,
     },
     {
       id: 8,
-      img: img3,
-      title: "Vegetable",
+      img: img8,
+      title: "Vegetables",
       desc: "",
       price: 1000,
     },
     {
       id: 9,
-      img: img3,
-      title: "Oil",
+      img: img9,
+      title: "Tubers",
       desc: "",
       price: 1000,
     },
