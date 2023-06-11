@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { DiApple } from "react-icons/di";
 import { BsFacebook } from "react-icons/bs";
+import { toast, ToastContainer } from "react-toastify";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -43,13 +44,16 @@ const Register = () => {
       setPassword("");
       setConfirmPassword("");
     } catch (error) {
-      // Handle error responses
       console.error(error);
+      if (error.response) {
+        toast.error(error.response.data.message);
+      }
     }
   };
 
   return (
     <div className="container">
+      <ToastContainer />
       <h3 className="mb-5">Sign Up</h3>
       <div className="card shadow p-3 w-75 mb-5 bg-white rounded mx-auto">
         <form onSubmit={handleSubmit}>

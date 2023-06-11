@@ -7,6 +7,11 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json());
+app.use((req, res, next) => {
+  console.log(req.body);
+  // or log anything helpful in the req object
+  next();
+});
 app.use(express.urlencoded({ extended: true }));
 
 // Update the path for productRoutes.js

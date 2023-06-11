@@ -16,7 +16,7 @@ export default async function handler(req, res) {
 
   try {
     const client = await connectToDatabase();
-    const db = client.db("agromart");
+    const db = client.db("users");
     const collection = db.collection("users");
 
     // Find the user with the provided email and password
