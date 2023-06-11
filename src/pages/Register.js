@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import Subscribe from "../components/Subscribe";
 import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
@@ -7,6 +8,7 @@ import { DiApple } from "react-icons/di";
 import { BsFacebook } from "react-icons/bs";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -18,7 +20,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("./api/register", {
+      const response = await axios.post("/api/register", {
         firstName,
         lastName,
         email,
@@ -29,6 +31,9 @@ const Register = () => {
 
       // Handle the response if needed
       console.log(response.data); // Assuming the server returns a JSON response
+
+      // Redirect to the dashboard
+      navigate.push("/dashboard");
 
       // Reset the form
       setFirstName("");

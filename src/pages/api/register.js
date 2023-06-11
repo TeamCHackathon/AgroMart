@@ -1,3 +1,5 @@
+// const { MongoClient } = require("mongodb");
+
 import { connectToDatabase } from "../../../db/index";
 
 export default async function handler(req, res) {

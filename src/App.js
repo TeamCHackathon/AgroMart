@@ -13,6 +13,7 @@ import PaymentPage from "./pages/Payment";
 import Cart from "./pages/Cart";
 import ThankYouPage from "./pages/Thankyou";
 import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   const cartItems = []; // Replace with your cart items data
@@ -28,6 +29,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/marketplace" element={<Marketplace />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/payment" element={<PaymentPage />} />

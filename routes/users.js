@@ -1,87 +1,44 @@
-import express from "express";
-import mongodb from "mongodb";
-import bcrypt from "bcrypt";
+const express = require("express");
+const bcrypt = require("bcrypt");
+const User = require("../models/User");
 
 const router = express.Router();
-const MongoClient = mongodb.MongoClient;
-const uri =
-  "mongodb+srv://fortunechinenyem:agromart@cluster0.dkbmnkt.mongodb.net/";
 const saltRounds = 10;
 
 router.post("/register", async (req, res) => {
-  let client;
-
   try {
-    const { username, email, password } = req.body;
-
-    client = await MongoClient.connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    const db = client.db("users");
-
-    const existingUser = await db.collection("users").findOne({ email });
-    if (existingUser) {
-      return res.status(400).json({ error: "Email is already registered" });
+    if (!req.body.email || !req.body.password || !req.body.username) {
+      return res.status(400).json({ error: "Missing required fields" });
     }
-
-    // Hash the password
+    const { email, password, username } = req.body;
     const hashedPassword = await bcrypt.hash(password, saltRounds);
-
-    // Create a new user
-    const newUser = {
-      username,
-      email,
-      password: hashedPassword,
-    };
-
-    // Insert the new user into the database
-    const result = await db.collection("users").insertOne(newUser);
-    res.status(201).json(result.ops[0]);
+    const user = new User({ email, password: hashedPassword, username });
+    const result = await user.save();
+    res.status(201).json(result);
   } catch (err) {
-    console.error("Error registering user:", err);
+    console.error("Error creating user:", err);
     res.status(500).json({ error: "Internal server error" });
-  } finally {
-    if (client) {
-      client.close();
-    }
   }
 });
 
 router.post("/login", async (req, res) => {
-  let client;
-
   try {
     const { email, password } = req.body;
-
-    client = await MongoClient.connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    const db = client.db("agromart");
-
-    // Find the user with the given email
-    const user = await db.collection("users").findOne({ email });
+    // Find user by email
+    const user = await User.findOne({ email });
+    // If no user found, return error
     if (!user) {
-      return res.status(401).json({ error: "Invalid credentials" });
+      return res.status(400).json({ error: "Invalid email or password" });
     }
-
-    // Compare the provided password with the hashed password in the database
-    const passwordMatch = await bcrypt.compare(password, user.password);
-    if (!passwordMatch) {
-      return res.status(401).json({ error: "Invalid credentials" });
+    // If user found, compare passwords
+    const result = await bcrypt.compare(password, user.password);
+    // If passwords match, return success
+    if (!result) {
+      return res.status(400).json({ error: "Invalid email or password" });
     }
-
-    // Return a success message or user information
+    // If passwords don't match, return error
     res.json({ message: "Login successful", user });
-  } catch (err) {
-    console.error("Error logging in:", err);
-    res.status(500).json({ error: "Internal server error" });
-  } finally {
-    if (client) {
-      client.close();
-    }
-  }
+  } catch (error) {}
 });
 
-export default router;
+module.exports = router;
