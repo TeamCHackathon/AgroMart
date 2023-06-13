@@ -3,6 +3,7 @@ import logo from "../images/agr1.JPG";
 import logo2 from "../images/agr2.JPG";
 import logo3 from "../images/agr3.JPG";
 import logoo from "../images/agr00.jpg";
+import { Link } from "react-router-dom";
 const Homedisplay2 = () => {
   return (
     <>
@@ -34,7 +35,9 @@ const Homedisplay2 = () => {
           <h5>Are you a Store Owner?</h5>
           <p>Your Products can be listed on Agromart too!</p>
           <div>
-            <button className="btn1">Apply Now</button>
+            <button className="btn1">
+              <Link to="/vendors">Apply Now</Link>
+            </button>
           </div>
         </div>
       </div>

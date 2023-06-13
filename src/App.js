@@ -14,6 +14,7 @@ import Cart from "./pages/Cart";
 import ThankYouPage from "./pages/Thankyou";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
+import Vendors from "./pages/Vendors";
 
 function App() {
   const cartItems = []; // Replace with your cart items data
@@ -21,7 +22,6 @@ function App() {
   return (
     <article>
       <NavBar cartItems={cartItems} />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -34,7 +34,8 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/thankyou" element={<ThankYouPage />} />
-      </Routes>
+        <Route path="/vendors" element={<Vendors />} />
+      </Routes>{" "}
       <Footer />
     </article>
   );
