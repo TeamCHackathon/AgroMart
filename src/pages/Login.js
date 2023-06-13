@@ -37,7 +37,12 @@ const Login = () => {
     <div className="container">
       <h3 className="mb-5">Login</h3>
       <div className="card shadow p-3 w-75 mb-5 bg-white rounded mx-auto">
-        <form onSubmit={handleSubmit} data-netlify="true">
+        <form
+          onSubmit={handleSubmit}
+          data-netlify="true"
+          name="login"
+          method="post"
+        >
           <div className="mb-3">
             <label htmlFor="email" className="form-label">
               Email
