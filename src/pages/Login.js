@@ -14,22 +14,24 @@ const Login = () => {
 
     try {
       const response = await axios.post("./api/login", {
-        email,
-        password,
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
       });
 
-      // Handle the response if needed
-      console.log(response.data); // Assuming the server returns a JSON response
-
-      // Reset the form
-      setEmail("");
-      setPassword("");
-
-      // Redirect to the dashboard or desired page
-      navigate.push("/dashboard");
+      if (response.ok) {
+        // Login successful, handle the success case
+        console.log("Login successful");
+        // Redirect to the dashboard page
+        router.push("/dashboard");
+      } else {
+        // Login failed, handle the error case
+        const data = await response.json();
+        console.error("Login failed:", data.message);
+      }
     } catch (error) {
-      // Handle error responses
-      console.error(error);
+      // Handle any network or server errors
+      console.error("An error occurred:", error);
     }
   };
 

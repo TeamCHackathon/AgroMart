@@ -24,11 +24,15 @@ const Register = () => {
       const response = await axios.post(
         `${process.env.REACT_APP_API_BASE_URL}/api/users/register`,
         {
-          firstName,
-          lastName,
-          email,
-          phoneNumber,
-          password,
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            firstName,
+            lastName,
+            email,
+            phoneNumber,
+            password,
+          }),
         }
       );
 
