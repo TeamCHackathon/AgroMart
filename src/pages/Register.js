@@ -58,12 +58,7 @@ const Register = () => {
       <ToastContainer />
       <h3 className="mb-5">Sign Up</h3>
       <div className="card shadow p-3 w-75 mb-5 bg-white rounded mx-auto">
-        <form
-          onSubmit={handleSubmit}
-          data-netlify="true"
-          name="register"
-          method="post"
-        >
+        <form onSubmit={handleSubmit} data-netlify="true">
           <div className="mb-3">
             <label htmlFor="firstName" className="form-label">
               First Name
@@ -136,6 +131,8 @@ const Register = () => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
+          <input type="hidden" name="form-name" value="register" />
+
           <button type="submit" className="btn btn1">
             Submit
           </button>
