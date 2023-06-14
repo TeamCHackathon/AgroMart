@@ -21,20 +21,19 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("/api/register", {
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/users/register`, {
         firstName,
         lastName,
         email,
         phoneNumber,
         password,
-        confirmPassword,
       });
 
       // Handle the response if needed
       console.log(response.data); // Assuming the server returns a JSON response
 
       // Redirect to the dashboard
-      navigate.push("/dashboard");
+      navigate("/dashboard");
 
       // Reset the form
       setFirstName("");

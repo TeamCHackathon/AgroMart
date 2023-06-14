@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Register</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <!-- A little help for the Netlify bots if you're not using a SSG -->
+    <form name="register" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="phonenumber" name="phonenumber" />
+      <input type="email" name="email" />
+      <input type="password" name="password" />
+    </form>
+
+    <div id="root"></div>
+    <script type="text/babel">
+      ReactDOM.render(
+        <form name="contact" method="POST">
+          <input type="hidden" name="form-name" value="register" />
+          <p>
+            <label>
+              Your First Name: <input type="text" name="firstname" />
+            </label>
+          </p>
+          <p>
+            <label>
+              Your Last Name: <input type="text" name="lastname" />
+            </label>
+          </p>
+          <p>
+            <label>
+              Your Email: <input type="email" name="email" />
+            </label>
+          </p>
+
+          <p>
+            <label>
+              Your Phone Number: <input type="phonenumber" name="phonenumber" />
+            </label>
+          </p>
+          <p>
+            <label>
+              Your Password: <input type="password" name="password" />
+            </label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>,
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
