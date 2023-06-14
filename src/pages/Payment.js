@@ -61,7 +61,7 @@ const PaymentPage = () => {
                 required
               />
             </div>
-            <button className="btn btn-success " type="submit">
+            <button className="btn1 " type="submit">
               <Link to="/thankyou" className="nav-link">
                 {" "}
                 Submit Payment
