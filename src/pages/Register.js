@@ -21,13 +21,16 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/users/register`, {
-        firstName,
-        lastName,
-        email,
-        phoneNumber,
-        password,
-      });
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_BASE_URL}/api/users/register`,
+        {
+          firstName,
+          lastName,
+          email,
+          phoneNumber,
+          password,
+        }
+      );
 
       // Handle the response if needed
       console.log(response.data); // Assuming the server returns a JSON response
@@ -55,7 +58,7 @@ const Register = () => {
       <ToastContainer />
       <h3 className="mb-5">Sign Up</h3>
       <div className="card shadow p-3 w-75 mb-5 bg-white rounded mx-auto">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} data-netlify="true">
           <div className="mb-3">
             <label htmlFor="firstName" className="form-label">
               First Name
@@ -128,6 +131,8 @@ const Register = () => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
+          <input type="hidden" name="form-name" value="register" />
+
           <button type="submit" className="btn btn1">
             Submit
           </button>

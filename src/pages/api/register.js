@@ -26,7 +26,7 @@ export default async function handler(req, res) {
 
   try {
     const client = await connectToDatabase();
-    const db = client.db("users");
+    const db = client.db("test");
     const collection = db.collection("users");
 
     // Access the collection and perform database operations
