@@ -23,7 +23,7 @@ const Login = () => {
         // Login successful, handle the success case
         console.log("Login successful");
         // Redirect to the dashboard page
-        router.push("/dashboard");
+        navigate.push("/dashboard");
       } else {
         // Login failed, handle the error case
         const data = await response.json();
